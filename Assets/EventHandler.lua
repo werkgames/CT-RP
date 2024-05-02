@@ -1,3 +1,4 @@
+
 -- Define a global table to hold all events and their listeners
 _EVENTS = {}
 

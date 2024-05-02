@@ -2,8 +2,8 @@ local playerRoleManager = require("PlayerRoleManager")
 
 local eventHandler = require("EventHandler")
 
-local updatePlayerListEvent = eventHandler.createEvent("UpdatePlayerListEvent")
-local updatePlayerInListEvent = eventHandler.createEvent("UpdatePlayerInListEvent")
+eventHandler.createEvent("UpdatePlayerListEvent")
+eventHandler.createEvent("UpdatePlayerInListEvent")
 
 local playerList = {}
 
@@ -32,7 +32,7 @@ local function onUpdatePlayerInListEvent(targetPlayerObject)
     playerList[targetPlayerObject.player.id] = targetPlayerObject
     eventHandler.fireEvent("UpdatePlayerListEvent")
 end
-updatePlayerInListEvent.connectEvent("UpdatePlayerInListEvent", onUpdatePlayerInListEvent)
+eventHandler.connectEvent("UpdatePlayerInListEvent", onUpdatePlayerInListEvent)
 
 server.PlayerConnected:Connect(onPlayerConnected)
 server.PlayerDisconnected:Connect(onPlayerDisconnected)

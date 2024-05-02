@@ -2,6 +2,8 @@ local playerRoleUpdatedSCEvent = Event.new("PlayerRoleUpdatedSCEvent")
 
 local updatePlayerRoleCSEvent = Event.new("UpdatePlayerRoleCSEvent")
 
+local updatePlayerRoleCCEvent = Event.new("UpdatePlayerRoleCCEvent")
+
 function self:ServerAwake()
     local eventHandler = require("EventHandler")
 
@@ -30,8 +32,6 @@ function self:ServerAwake()
 
     local function onPlayerListUpdated(updatedPlayerList)
         playerList = updatedPlayerList
-        -- print("onPlayerListUpdated event works")
-        -- listAllPlayerRoles()
     end
     eventHandler.connectEvent("UpdatePlayerListEvent", onPlayerListUpdated)
 
@@ -69,12 +69,13 @@ function self:ClientAwake()
 
     function onPlayerRoleUpdatedSC(targetPlayerObject)
         --update target player on client player list
-        -- fire client event to notify player role ui of change
+        playerList[targetPlayerObject.player.id] = targetPlayerObject
+        -- fire client event to notify player role ui of change <-x import this module and listen to this event
+        updatePlayerRoleCCEvent:FireClient(targetPlayerObject)
     end
     playerRoleUpdatedSCEvent:Connect(onPlayerRoleUpdatedSC)
 
     function changeLocalPlayerRole(newRole)
         updatePlayerRoleCSEvent:FireServer(newRole)
     end
-    
 end
