@@ -4,6 +4,8 @@ local updatePlayerRoleCSEvent = Event.new("UpdatePlayerRoleCSEvent")
 
 local updatePlayerRoleCCEvent = Event.new("UpdatePlayerRoleCCEvent")
 
+local updatePlayerListSCEvent = Event.new("UpdatePlayerListSCEvent")
+
 function self:ServerAwake()
     local eventHandler = require("EventHandler")
 
@@ -32,6 +34,8 @@ function self:ServerAwake()
 
     local function onPlayerListUpdated(updatedPlayerList)
         playerList = updatedPlayerList
+
+        updatePlayerListSCEvent:FireAllClients(playerList)
     end
     eventHandler.connectEvent("UpdatePlayerListEvent", onPlayerListUpdated)
 
@@ -78,4 +82,9 @@ function self:ClientAwake()
     function changeLocalPlayerRole(newRole)
         updatePlayerRoleCSEvent:FireServer(newRole)
     end
+
+    function onUpdatePlayerListSCEvent(updatedPlayerList)
+        playerList = updatedPlayerList
+    end
+    updatePlayerListSCEvent:Connect(onUpdatePlayerListSCEvent)
 end

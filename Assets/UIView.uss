@@ -1,2 +1,13 @@
 .view {
 }
+
+.container {
+  flex-grow: 1;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.button {
+    background-color: rgb(102, 167, 255);
+}

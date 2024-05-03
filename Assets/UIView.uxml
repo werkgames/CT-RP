@@ -1,7 +1,7 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="UnityEngine.UIElements" hr="Highrise.UI" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UIView.uss?fileID=7433441132597879392&amp;guid=62c9febaaffced640b4c7e22bdf25f69&amp;type=3#UIView" />
-    <ui:VisualElement focusable="true" style="flex-grow: 1;">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-    </ui:VisualElement>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:hr="Highrise.UI" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Highrise.UI.UILuaView picking-mode="Ignore">
+        <ui:VisualElement class="container" style="flex-grow: 1; justify-content: flex-end; align-items: flex-end;">
+            <ui:Button text="Role Selection" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" />
+        </ui:VisualElement>
+    </Highrise.UI.UILuaView>
 </ui:UXML>
