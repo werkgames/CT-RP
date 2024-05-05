@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:hr="Highrise.UI" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Highrise.UI.UILuaView picking-mode="Ignore">
-        <ui:VisualElement class="container" style="flex-grow: 1; justify-content: flex-end; align-items: flex-end;">
-            <ui:Button text="Role Selection" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button" />
+    <hr:UILuaView picking-mode="Ignore" style="flex-direction: column-reverse; height: 100%; min-height: 100%;">
+        <ui:VisualElement picking-mode="Ignore" name="button-container" class="button-container">
+            <ui:Button picking-mode="Position" name="roleSelectionButton" text="Role Selection" class="button" />
         </ui:VisualElement>
-    </Highrise.UI.UILuaView>
+    </hr:UILuaView>
 </ui:UXML>
