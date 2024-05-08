@@ -1,13 +1,29 @@
 --!Type(UI)
 
 --!Bind
-local roleSelectionButton : Button = nil
+local roleSelectionButton : UIButton = nil
 
+--!Bind
+local roleSelectionLabel : UILabel = nil
 
-function onButtonClicked()
-    print("Button Clicked")
+--!Bind
+local mainUIButtonContainer : VisualElement = nil
+
+--!Bind
+local mainListView : UIListView = nil
+
+--!Bind
+local roleSelectionVE : VisualElement = nil
+
+--!Bind
+local mainScrollView : UIScrollView = nil
+
+function onRoleSelectionButtonClicked()
+    print("Role Selection clicked")
+
+    mainUIButtonContainer:AddToClassList("hidden")
+    roleSelectionVE:RemoveFromClassList("hidden")
+
 end
 
-function self:Awake()
-    roleSelectionButton:RegisterCallback(onButtonClicked)
-end
+roleSelectionButton:RegisterPressCallback(onRoleSelectionButtonClicked, true, true, true)

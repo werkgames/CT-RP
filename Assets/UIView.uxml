@@ -1,7 +1,48 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:hr="Highrise.UI" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <hr:UILuaView picking-mode="Ignore" style="flex-direction: column-reverse; height: 100%; min-height: 100%;">
-        <ui:VisualElement picking-mode="Ignore" name="button-container" class="button-container">
-            <ui:Button picking-mode="Position" name="roleSelectionButton" text="Role Selection" class="button" />
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:ui="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <hr:UILuaView picking-mode="Ignore" class="main-ui-panel">
+        <ui:VisualElement picking-mode="Ignore" name="mainUIButtonContainer" class="button-container">
+            <hr:UIButton name="roleSelectionButton" class="button">
+                <ui:Label name="roleSelectionLabel" text="Role Selection" />
+            </hr:UIButton>
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="roleSelectionVE" class="hidden">
+            <hr:UIListView name="mainListView" class="main-list-view">
+                <hr:UIButton name="UIButton" class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+                <hr:UIButton class="button">
+                    <ui:Label tabindex="-1" text="Role Name" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </hr:UIButton>
+            </hr:UIListView>
         </ui:VisualElement>
     </hr:UILuaView>
-</ui:UXML>
+</UXML>
